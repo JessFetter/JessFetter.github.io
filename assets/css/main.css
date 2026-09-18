@@ -1212,6 +1212,7 @@ input[type="radio"] + label:before {
 
 /* Image */
 .image {
+  background-repeat: no-repeat;
   border-radius: 0.375em;
   border: 0;
   display: inline-block;
