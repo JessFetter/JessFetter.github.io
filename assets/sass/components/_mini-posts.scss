@@ -14,11 +14,14 @@
 
 			.image {
 				display: block;
-				margin: 0 0 (_size(element-margin) * 0.75) 0;
+				width: 80%;
+				max-width: 360px;
+				margin: 0 auto (_size(element-margin) * 0.75) auto;
 
 				img {
 					display: block;
 					width: 100%;
+					height: auto;
 				}
 			}
 
