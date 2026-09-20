@@ -1238,16 +1238,23 @@ input[type="radio"] + label:before {
     width: 100%; }
     .image.fit img {
       width: 100%;
-      height: 60vh;
-      object-fit: cover; }
+      height: auto;
+      object-fit: contain; }
   .image.main {
     display: block;
     margin: 0 0 3em 0;
     width: 100%; }
     .image.main img {
       width: 100%;
-      height: 75vh;
-      object-fit: cover; }
+      height: auto;
+      object-fit: contain; }
+
+article#amphibious-drone .image.main img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: none;
+  display: block; }
 
 a.image {
   overflow: hidden; }
@@ -1585,24 +1592,48 @@ button,
     pointer-events: none;
     opacity: 0.25; }
 
+#engineering-projects article {
+  margin: 0 0 2.25em 0; }
+  #engineering-projects article > h2 {
+    margin: 0 0 0.85em 0; }
+  #engineering-projects article > p {
+    margin-top: 1em; }
+  #engineering-projects .image.main {
+    margin-bottom: 1.5em; }
+
+#amphibious-drone .image.main img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block; }
+
 /* Mini Posts */
-.mini-posts article {
-  border-top: solid 1px rgba(210, 215, 217, 0.75);
-  margin-top: 2em;
-  padding-top: 2em; }
-  .mini-posts article .image {
-    display: block;
-    width: 80%;
-    max-width: 360px;
-    margin: 0 auto 1.5em auto; }
-    .mini-posts article .image img {
+.mini-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em 2em;
+  margin: 1.5em 0 2em 0; }
+  .mini-posts article {
+    border-top: solid 1px rgba(210, 215, 217, 0.75);
+    margin-top: 0;
+    padding-top: 1.5em; }
+    .mini-posts article .image {
       display: block;
       width: 100%;
-      height: auto; }
-  .mini-posts article:first-child {
-    border-top: 0;
-    margin-top: 0;
-    padding-top: 0; }
+      max-width: 360px;
+      margin: 0 auto 1em auto;
+      overflow: visible; }
+      .mini-posts article .image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain; }
+    .mini-posts article p {
+      margin: 0; }
+    .mini-posts article:first-child {
+      border-top: 0;
+      margin-top: 0;
+      padding-top: 0; }
 
 /* Features */
 .features {
@@ -2146,20 +2177,18 @@ button,
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible;
     margin: 0 0 2em 4em;
-    width: 50%;
+    width: clamp(220px, 32vw, 430px);
+    max-width: 100%;
     height: auto; }
     #banner .image img {
       display: block;
       height: auto;
       max-height: 100%;
       max-width: 100%;
-      width: 100%;
-      -moz-object-fit: cover;
-      -webkit-object-fit: cover;
-      -ms-object-fit: cover;
-      object-fit: cover;
+      width: auto;
+      object-fit: contain;
       -moz-object-position: center;
       -webkit-object-position: center;
       -ms-object-position: center;
